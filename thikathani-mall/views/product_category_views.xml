@@ -1,0 +1,20 @@
+<odoo>
+    <data>
+        <record id="view_product_category_form_inherit" model="ir.ui.view">
+            <field name="name">product.category.thika.form.inherit</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='parent_id']" position="before">
+                    <field name="internal_code" />
+                </xpath>
+                <xpath expr="//div[@class='oe_title']" position="before">
+                    <field name="image" widget="image" class="oe_avatar oe_right"/>
+                </xpath>
+                <xpath expr="//field[@name='parent_id']" position="after">
+                    <field name="image_url"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
